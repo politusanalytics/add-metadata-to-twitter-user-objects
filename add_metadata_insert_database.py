@@ -176,7 +176,7 @@ def add_metadata(user_object):
     return user_object
 
 # Insert metadata-added user objects into "twitter_col" & update "meta" key in "user_col"
-for user in user_col.find({"meta": False}):
+for user in user_col.find({"meta": False}).batch_size(15):
     user_id_str = user['id_str']
     print(f"User ID: {user_id_str}")
     print(f"Adding metadata to {user_id_str} & inserting it into twitter_collection.")
