@@ -175,11 +175,16 @@ def add_metadata(user_object):
     
     return user_object
 
-# Insert metadata-added user objects into "twitter_col" & update "meta" key in "user_col"
-for user in user_col.find({"meta": False}).batch_size(15):
-    user_id_str = user['id_str']
-    print(f"User ID: {user_id_str}")
-    print(f"Adding metadata to {user_id_str} & inserting it into twitter_collection.")
-    twitter_col.insert_one(add_metadata(user)) # insert into "twitter_col"
-    print(f"Updating 'meta' in user_collection for {user_id_str}.\n")
-    user_col.update_one(filter={'id_str': user_id_str}, update={'$set': {"meta": True}}) # update "meta" in "user_col"
+while True:
+    try:
+        # Insert metadata-added user objects into "twitter_col" & update "meta" key in "user_col"
+        for user in user_col.find({"meta": False}).batch_size(15):
+            user_id_str = user['id_str']
+            print(f"User ID: {user_id_str}")
+            print(f"Adding metadata to {user_id_str} & inserting it into twitter_collection.")
+            twitter_col.insert_one(add_metadata(user)) # insert into "twitter_col"
+            print(f"Updating 'meta' in user_collection for {user_id_str}.\n")
+            user_col.update_one(filter={'id_str': user_id_str}, update={'$set': {"meta": True}}) # update "meta" in "user_col"
+    except:
+        print(f"Curser timed out.\nDocument count of twitter_collection: {twitter_col.count_documents({})}\n\n\n")
+        time.sleep(15)
