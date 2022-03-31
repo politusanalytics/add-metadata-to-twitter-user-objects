@@ -164,11 +164,24 @@ def add_metadata(user_object):
                 
     try:
         user_info = api.get_user(user_id=user_id)
+        # add "followers_count" and "following_count"
         user_object["followers_count"] = user_info.followers_count
         user_object["following_count"] = user_info.friends_count
+        # add profile image URL
+        pp_url = user_info.profile_image_url_https
+        if pp_url.split("/")[2] == 'pbs.twimg.com':
+            return_pp_url = '/'.join(pp_url.split("/")[-2:])
+        elif pp_url.split("/")[2] == 'abs.twimg.com':
+            return_pp_url = ""
+        user_object["pp"] = return_pp_url
+
     except:
+        # add "followers_count" and "following_count"
         user_object["followers_count"] = np.nan
         user_object["following_count"] = np.nan
+        # add profile image URL
+        return_pp_url = ""
+        user_object["pp"] = return_pp_url
         
     # add downloaded date
     user_object["downloaded"] = datetime.datetime.now().strftime("%y%m%d")
