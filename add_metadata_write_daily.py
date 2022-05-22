@@ -155,8 +155,8 @@ def add_metadata(user_object):
             return_pp_url = ""
         user_object["pp"] = return_pp_url
     else:
-        user_object["followers_count"] = np.nan
-        user_object["following_count"] = np.nan
+        user_object["followers_count"] = ""
+        user_object["following_count"] = ""
         return_pp_url = ""
         user_object["pp"] = return_pp_url
 
@@ -178,7 +178,7 @@ if f"users_downloaded-batch_{batch_no}.txt" not in os.listdir("daily_downloads")
 # Download user objects
 print(f"Batch {batch_no} Progress:")
 while True:
-    user = users[np.random.randint(low=0, high=100_001)]
+    user = users[np.random.randint(low=0, high=100_000)]
     try:
         # Add metadata to user objects & write to daily gzip files
         # Check if user has already been downloaded
