@@ -177,8 +177,8 @@ def add_metadata(user_object):
 
     except:
         # add "followers_count" and "following_count"
-        user_object["followers_count"] = np.nan
-        user_object["following_count"] = np.nan
+        user_object["followers_count"] = ""
+        user_object["following_count"] = ""
         # add profile image URL
         return_pp_url = ""
         user_object["pp"] = return_pp_url
