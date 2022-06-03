@@ -7,3 +7,5 @@
 - [province_gender_available-metadata_statistics.ipynb](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/province_gender_available-metadata_statistics.ipynb): Exploratory analysis and descriptive statistics for the collected data (03/06/2022)
 
 - [province_gender_available-monthly_topics.ipynb](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/province_gender_available-monthly_topics.ipynb): Monthly most common 200 words and hashtags in favorited tweets from 2021 and 2022
+
+- [province_gender_available-read_data.ipynb](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/province_gender_available-read_data.ipynb): Read data from gzip file
