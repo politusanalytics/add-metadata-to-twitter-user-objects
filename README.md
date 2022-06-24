@@ -10,7 +10,7 @@
 
 - [province_gender_available-read_data.ipynb](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/province_gender_available-read_data.ipynb): Read data from gzip file
 
-- [province_gender_available-detect_active_users.ipynb](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/province_gender_available-detect_active_users.ipynb)
+- [province_gender_available-detect_active_users.ipynb](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/province_gender_available-detect_active_users.ipynb): Different techniques and their results to detect active users in the collected user dataset
 
 - [data-reports](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/tree/main/data-reports):
   - [Twitter_Data_Report-220509.pdf](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/data-reports/Twitter_Data_Report-220509.pdf) | [Twitter_Data_Report-220509.pptx](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/data-reports/Twitter_Data_Report-220509.pptx)
