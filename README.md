@@ -14,6 +14,8 @@
 
 - [province_gender_available-sample_thousand_users.ipynb](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/province_gender_available-sample_thousand_users.ipynb): Get a sample of 1000 users from user dataset
 
+- [province_gender_available-entity_linking_with_preprocessing.ipynb](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/province_gender_available-entity_linking_with_preprocessing.ipynb): Linking named entities in our data to the relevant political figures
+
 - [data-reports](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/tree/main/data-reports):
   - [Twitter_Data_Report-220509.pdf](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/data-reports/Twitter_Data_Report-220509.pdf) | [Twitter_Data_Report-220509.pptx](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/data-reports/Twitter_Data_Report-220509.pptx)
   - [Twitter_Data_Report-220515.pdf](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/data-reports/Twitter_Data_Report-220515.pdf) | [Twitter_Data_Report-220515.pptx](https://github.com/politusanalytics/add-metadata-to-twitter-user-objects/blob/main/data-reports/Twitter_Data_Report-220515.pptx)
