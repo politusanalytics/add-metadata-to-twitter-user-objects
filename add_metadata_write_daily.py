@@ -11,7 +11,7 @@ import sys
 batch_no = sys.argv[1]
 with open("bearer_tokens.txt", "r") as f:
     bearer_tokens = [x.strip() for x in f.readlines()]
-bearer_token = bearer_tokens[int(sys.argv[1])-1]
+bearer_token = bearer_tokens[int(sys.argv[1])%8-1]
 
 ## tweepy.Client
 client = tweepy.Client(bearer_token=bearer_token, wait_on_rate_limit=True)
@@ -137,8 +137,16 @@ def add_metadata(user_object):
         for tweet in user_object["tweets"]:
             if tweet["type"] == "original":
                 tweet["twt_date"] = get_tweet_id_year(tweet["twt_id_str"])
-            else:
-                tweet["twt_date"] = get_tweet_id_year(tweet["ref_twt_id_str"])
+            elif tweet["type"] == "fav":
+                tweet["ref_twt_date"] = get_tweet_id_year(tweet["ref_twt_id_str"])
+            elif tweet["type"] == "retweet":
+                tweet["ref_twt_date"] = get_tweet_id_year(tweet["ref_twt_id_str"])
+            elif tweet["type"] == "quote":
+                tweet["twt_date"] = get_tweet_id_year(tweet["twt_id_str"])
+                tweet["ref_twt_date"] = get_tweet_id_year(tweet["ref_twt_id_str"])
+            elif tweet["type"] == "reply":
+                tweet["twt_date"] = get_tweet_id_year(tweet["twt_id_str"])
+                tweet["ref_twt_date"] = get_tweet_id_year(tweet["ref_twt_id_str"])
                 
     # get "profile_image_url", "followers_count" and "following_count" from user_info
     user_info = client.get_user(id=user_id, user_fields=["profile_image_url", "public_metrics"])
